@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build simple shelter",
+      "type": "shell",
+      "command": "g++",
+      "args": ["-std=c++11", "-Wall", "-Wextra", "backend/main.cpp", "-o", "shelter"],
+      "windows": {
+        "args": ["-std=c++11", "-Wall", "-Wextra", "backend/main.cpp", "-o", "shelter.exe", "-lws2_32"]
+      },
+      "options": {"cwd": "${workspaceFolder}"},
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

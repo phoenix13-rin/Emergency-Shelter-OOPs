@@ -1,0 +1,8 @@
+
+PS G:\Downloads\Emergency-Shelter-Simple-CPP\shelter-simple> .\run-console.bat
+
+PS G:\Downloads\Emergency-Shelter-Simple-CPP\shelter-simple> $env:Path = "C:\msys64\ucrt64\bin;" + $env:Path
+>> .\run.bat
+Open http://localhost:8080 in your browser after the server starts.
+Simple Shelter running at http://localhost:8080
+Press Ctrl+C to stop.

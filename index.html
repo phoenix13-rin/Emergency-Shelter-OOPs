@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emergency Shelter — OOP Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Emergency Shelter Resource Management</h1>
+      <p>A small C++ OOP project · Food, water, households and allocations</p>
+      <span id="connection">Connecting to C++…</span>
+    </header>
+    <p class="note">Data is stored in memory. Restarting the server resets it. Refreshing this page keeps it.</p>
+    <div id="message" role="status" aria-live="polite">Ready to use.</div>
+    <div class="summary">
+      <div><span>People in shelter</span><strong id="people">—</strong></div>
+      <div><span>Spaces available</span><strong id="spaces">—</strong></div>
+      <div><span>Allocations made</span><strong id="count">—</strong></div>
+    </div>
+    <section>
+      <h2>Resources</h2>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Type</th><th>Stock</th><th>Expiry</th><th>Status</th></tr></thead><tbody id="resources"></tbody></table></div>
+    </section>
+    <div class="forms">
+      <section>
+        <h2>Add a resource batch</h2>
+        <form id="resource-form">
+          <label>Name <input name="name" maxlength="80" required placeholder="e.g. Rice meal packs"></label>
+          <label>Type <select name="type" id="type"><option>Water</option><option>Food</option></select></label>
+          <label>Quantity <input name="quantity" type="number" min="1" max="100000" value="10" required></label>
+          <label id="expiry-label" hidden>Expiry date <input name="expiry" id="expiry" type="date"></label>
+          <button>Add resource</button>
+        </form>
+      </section>
+      <section>
+        <h2>Admit a household</h2>
+        <form id="resident-form">
+          <label>Household name <input name="name" maxlength="80" required placeholder="e.g. Demo family"></label>
+          <label>Number of people <input name="members" type="number" min="1" max="20" value="3" required></label>
+          <button>Admit household</button>
+        </form>
+      </section>
+      <section>
+        <h2>Allocate supplies</h2>
+        <form id="allocation-form">
+          <label>Household <select name="residentId" id="resident-select" required></select></label>
+          <label>Resource <select name="resourceId" id="resource-select" required></select></label>
+          <label>Quantity <input name="quantity" type="number" min="1" max="100000" value="5" required></label>
+          <button>Allocate</button>
+          <small>Choose the expired food batch to demonstrate exception handling.</small>
+        </form>
+      </section>
+      <section>
+        <h2>Restock supplies</h2>
+        <form id="restock-form">
+          <label>Resource <select name="resourceId" id="restock-select" required></select></label>
+          <label>Quantity to add <input name="quantity" type="number" min="1" max="100000" value="10" required></label>
+          <label>Donor (optional) <input name="donor" maxlength="80" placeholder="e.g. College club"></label>
+          <button>Add stock</button>
+          <small>A donor selects addStock(amount, donor); a blank donor selects addStock(amount).</small>
+        </form>
+      </section>
+    </div>
+    <section>
+      <h2>Households</h2>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>People</th></tr></thead><tbody id="residents"></tbody></table></div>
+    </section>
+    <section>
+      <h2>Allocation history</h2>
+      <div class="table-wrap"><table><thead><tr><th>Household</th><th>Resource</th><th>Quantity</th></tr></thead><tbody id="allocations"></tbody></table></div>
+    </section>
+    <section>
+      <h2>Restock history</h2>
+      <div class="table-wrap"><table><thead><tr><th>Resource</th><th>Quantity</th><th>Donor</th></tr></thead><tbody id="restocks"></tbody></table></div>
+    </section>
+    <footer><span>Main OOP code: resource.hpp and shelter.hpp</span><button id="reset">Reset example data</button></footer>
+  </main>
+</body>
+</html>

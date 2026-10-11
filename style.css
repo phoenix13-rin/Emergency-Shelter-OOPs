@@ -1,0 +1,33 @@
+/* Basic styles. No animations, external fonts, images or dashboard framework. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f2f4f7; color: #263247; }
+main { max-width: 1050px; margin: auto; padding: 26px 20px; }
+header { border-bottom: 2px solid #426b9b; padding-bottom: 18px; }
+h1 { margin: 0 0 10px; font-size: 25px; }
+h2 { margin: 0 0 18px; font-size: 18px; }
+p, small { color: #627086; line-height: 1.6; }
+#connection { font-size: 13px; font-weight: bold; }
+.note { font-size: 13px; }
+#message { padding: 12px; margin: 15px 0; background: #e7f2e9; border: 1px solid #c4dec9; border-radius: 5px; }
+#message.error { background: #fdecec; color: #a23131; border-color: #efbebe; }
+.summary, .forms { display: grid; gap: 18px; }
+.summary { grid-template-columns: repeat(3, 1fr); margin: 20px 0; }
+.summary div { background: white; border: 1px solid #dce1e8; padding: 20px; border-radius: 5px; }
+.summary span { display: block; font-size: 13px; }
+.summary strong { display: block; margin-top: 10px; font-size: 28px; }
+.forms { grid-template-columns: repeat(2, 1fr); }
+section { background: white; border: 1px solid #dce1e8; border-radius: 5px; padding: 20px; margin-bottom: 20px; }
+label { display: block; margin: 12px 0; font-size: 13px; }
+input, select { display: block; width: 100%; margin-top: 7px; padding: 10px; border: 1px solid #bcc7d5; border-radius: 4px; font: inherit; }
+button { background: #426b9b; color: white; border: 0; border-radius: 4px; padding: 11px 16px; cursor: pointer; }
+button:hover { background: #30527b; }
+button:disabled { opacity: .5; cursor: wait; }
+small { display: block; margin-top: 12px; font-size: 12px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
+th, td { border-bottom: 1px solid #e1e5eb; padding: 12px 8px; }
+th { background: #f4f6f9; }
+.blocked { color: #aa3737; }
+footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; font-size: 12px; }
+[hidden] { display: none !important; }
+@media (max-width: 650px) { .forms { grid-template-columns: 1fr; } .summary { gap: 8px; } .summary div { padding: 12px; } h1 { font-size: 21px; } footer { flex-wrap: wrap; } }
